@@ -1,0 +1,16 @@
+DataBase:
+CREATE TABLE `person` (
+   `person_id` int NOT NULL,
+   `first_name` varchar(30) DEFAULT NULL,
+   `last_name` varchar(30) DEFAULT NULL,
+   `city` varchar(30) DEFAULT NULL,
+   PRIMARY KEY (`person_id`)
+ ) ;
+CREATE TABLE `orders` (
+   `order_id` int NOT NULL,
+   `purch_amt` int DEFAULT NULL,
+   `ord_date` varchar(30) DEFAULT NULL,
+   `person_id` int DEFAULT NULL,
+   PRIMARY KEY (`order_id`),
+   FOREIGN KEY (person_id) REFERENCES person(person_id)
+ ) ;
